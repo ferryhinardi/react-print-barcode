@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "glaring-inferno-7571",
+    "default": "demobarcode-83b6b"
+  }
+}

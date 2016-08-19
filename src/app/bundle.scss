@@ -1,0 +1,123 @@
+body {
+  font-size: 10pt;
+}
+
+.section-to-print {
+    text-align: -webkit-center;
+}
+
+/*
+width: 4.035in;
+min-height: 3.937in;
+*/
+/*
+width: 102mm;
+height: 100mm;
+*/
+.page {
+    width: 4.025in;
+    height: 3.927in;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    .container-barcode {
+        &:before {
+            content: "";
+            display: table;
+        }
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .barcoder {
+            position: relative;
+            width: 49%;
+            text-align: center;
+            float: left;
+            height: 1.958in;
+
+            .title {
+                padding-bottom:10px;
+            }
+            
+            .sku {
+                font-size: 8pt;
+                padding-top:5px;
+                padding-bottom:4px;
+            }
+
+            .description {
+                font-size:8pt;
+            }
+
+            .footer {
+                position: absolute;
+                bottom: 3px;
+                width:98%;
+                &:before {
+                    content: "";
+                    display: table;
+                }
+
+                &:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                .date, .pass {
+                    font-size: 8pt;
+                }
+
+                .date {
+                    float: left;
+                    margin-left: 10px;
+                }
+
+                .pass {
+                    float: right;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+/* width: 2.017in; */
+
+@page {
+    width: 4.035in;
+    height: 3.9in;
+    margin: 0;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .section-to-print, .section-to-print * {
+        visibility: visible;
+    }
+    .section-to-print {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
