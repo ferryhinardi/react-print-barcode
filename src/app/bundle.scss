@@ -1,19 +1,8 @@
-body {
-  font-size: 10pt;
-}
-
+/* Barcoder Print */
 .section-to-print {
     text-align: -webkit-center;
 }
 
-/*
-width: 4.035in;
-min-height: 3.937in;
-*/
-/*
-width: 102mm;
-height: 100mm;
-*/
 .page {
     width: 4.025in;
     height: 3.927in;
@@ -21,8 +10,6 @@ height: 100mm;
     border-radius: 5px;
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;
-    margin-bottom: 5px;
 
     .container-barcode {
         &:before {
@@ -41,16 +28,20 @@ height: 100mm;
             width: 49%;
             text-align: center;
             float: left;
-            height: 1.958in;
 
             .title {
                 padding-bottom:10px;
             }
-            
+
+            .qrcode {
+                width:100%;
+                text-align: center;
+            }
+
             .sku {
                 font-size: 8pt;
-                padding-top:5px;
-                padding-bottom:4px;
+                padding-top:3px;
+                padding-bottom:3px;
             }
 
             .description {
@@ -90,8 +81,6 @@ height: 100mm;
     }
 }
 
-/* width: 2.017in; */
-
 @page {
     width: 4.035in;
     height: 3.9in;
@@ -109,6 +98,7 @@ height: 100mm;
         position: absolute;
         left: 0;
         top: 0;
+        margin-top: -28rem;
     }
     .page {
         margin: 0;
@@ -119,5 +109,14 @@ height: 100mm;
         box-shadow: initial;
         background: initial;
         page-break-after: always;
+        display: block;
+    }
+    .container-barcode {
+        width: 6.025in;
+    }
+    .barcoder {
+        height: 2.938in;
     }
 }
+
+/* End Of Barcoder Print */

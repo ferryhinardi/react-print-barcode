@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import QRCode from './barcode';
 
 const Barcoder = (props) => {
 	const markup = (
 		<div className="barcoder">
 			<div className="title">Sale Stock {props.index}</div>
-			<img src="http://www.ascd.org/ASCD/images/siteASCD/misc/sample-qr-code.png" width='35%' />
+            <div className="qrcode">
+                <QRCode value={props.sku} size={90} />
+            </div>
 			<div className="sku">{props.sku}</div>
 			<div className="description">{props.description}</div>
 			<div className="footer">
